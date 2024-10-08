@@ -1,10 +1,24 @@
 package src.main.java.Galaxy;
 
-public class Planet {
+public class Planet{
     private String planetName;
     private PlanetType planetType;
     private String moons;
     private String distanceFromSun;
+
+    private String lifeExistence;
+    public String resources;
+    public String galaxyName;
+
+    public Planet(String planetName, String moons, String distanceFromSun, String lifeExistence, String resources,String galaxyName) {
+        this.planetName = planetName;
+        this.moons = moons;
+        this.distanceFromSun = distanceFromSun;
+        this.lifeExistence = lifeExistence;
+        this.resources = resources;
+        this.galaxyName = galaxyName;
+    }
+
 
     public Planet(String planetName, String planetType, String moons, String distanceFromSun) {
     }
@@ -53,5 +67,29 @@ public class Planet {
 
     public void setDistanceFromSun(String distanceFromSun) {
         this.distanceFromSun = distanceFromSun;
+    }
+
+    public String getLifeExistence() {
+        return lifeExistence;
+    }
+
+    public void setLifeExistence(String lifeExistence) {
+        this.lifeExistence = lifeExistence;
+    }
+
+    public String getResources() {
+        return resources;
+    }
+
+    public void setResources(String resources) {
+        this.resources = resources;
+    }
+
+    public String getGalaxyName() {
+        return galaxyName;
+    }
+
+    public void setGalaxyName(String galaxyName) {
+        this.galaxyName = galaxyName;
     }
 }

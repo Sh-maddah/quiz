@@ -1,9 +1,6 @@
 package src.main.java;
 
-import src.main.java.Galaxy.Galaxy;
-import src.main.java.Galaxy.LifeSupportingPlanet;
-import src.main.java.Galaxy.Planet;
-import src.main.java.Galaxy.ResourceRichPlanet;
+import src.main.java.Galaxy.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -54,16 +51,13 @@ public class App {
                     String planetString = scanner.nextLine();
                     String planetName = planetString.split("#")[0];
                     String galaxyName = planetString.split("#")[1];
-                    String planetType = planetString.split("#")[2];
-                    String moons = planetString.split("#")[3];
-                    String distanceFromSun = planetString.split("#")[4];
-                    String lifeExistence = planetString.split("#")[5];
-                    String resources = planetString.split("#")[6];
+                    String moons = planetString.split("#")[2];
+                    String distanceFromSun = planetString.split("#")[3];
+                    String lifeExistence = planetString.split("#")[4];
+                    String resources = planetString.split("#")[5];
 
-                    LifeSupportingPlanet lifeSupportingPlanet = new LifeSupportingPlanet(planetName, planetType, moons, distanceFromSun, lifeExistence);
-                    ResourceRichPlanet resourceRichPlanet = new ResourceRichPlanet(planetName, planetType, moons, distanceFromSun, resources);
-                    galaxy.getPlanets().add(lifeSupportingPlanet);
-                    galaxy.getPlanets().add(resourceRichPlanet);
+                    Planet planet = new Planet(planetName,galaxyName, moons, distanceFromSun, lifeExistence,resources);
+                    galaxy.getPlanets().add(planet);
                 }
             }
         } catch (FileNotFoundException e) {
